@@ -1,0 +1,27 @@
+Postgres connection error: ConnectionRefusedError [SequelizeConnectionRefusedError]: connect ECONNREFUSED 127.0.0.1:5432
+    at Client._connectionCallback (C:\Users\HP\Dropbox\My PC (DESKTOP-1PF0QF4)\Documents\Web-dev\2026\26_Portfolio\backend\node_modules\sequelize\lib\dialects\postgres\connection-manager.js:133:24)
+    at Client._handleErrorWhileConnecting (C:\Users\HP\Dropbox\My PC (DESKTOP-1PF0QF4)\Documents\Web-dev\2026\26_Portfolio\backend\node_modules\pg\lib\client.js:403:19)
+    at Client._handleErrorEvent (C:\Users\HP\Dropbox\My PC (DESKTOP-1PF0QF4)\Documents\Web-dev\2026\26_Portfolio\backend\node_modules\pg\lib\client.js:413:19)
+    at Connection.emit (node:events:518:28)
+    at Socket.reportStreamError (C:\Users\HP\Dropbox\My PC (DESKTOP-1PF0QF4)\Documents\Web-dev\2026\26_Portfolio\backend\node_modules\pg\lib\connection.js:58:12)
+    at Socket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  parent: Error: connect ECONNREFUSED 127.0.0.1:5432
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16) {
+    errno: -4078,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '127.0.0.1',
+    port: 5432
+  },
+  original: Error: connect ECONNREFUSED 127.0.0.1:5432
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16) {
+    errno: -4078,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '127.0.0.1',
+    port: 5432
+  }
+}
