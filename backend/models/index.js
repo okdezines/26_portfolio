@@ -1,12 +1,20 @@
+const path = require("path");
 const { Sequelize, DataTypes } = require("sequelize");
 require("dotenv").config();
 
-const databaseUrl = process.env.DATABASE_URL || process.env.POSTGRES_URL || "postgres://postgres:password@127.0.0.1:5432/portfolio";
+const databaseUrl = process.env.DATABASE_URL;
+const storage = process.env.DATABASE_STORAGE || "database.sqlite";
 
-const sequelize = new Sequelize(databaseUrl, {
-  dialect: "postgres",
-  logging: false,
-});
+const sequelize = databaseUrl
+  ? new Sequelize(databaseUrl, {
+      dialect: "postgres",
+      logging: false,
+    })
+  : new Sequelize({
+      dialect: "sqlite",
+      storage: path.join(__dirname, "..", storage),
+      logging: false,
+    });
 
 // Import model definitions
 const defineProject = require("./Project");

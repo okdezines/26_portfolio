@@ -7,11 +7,11 @@ async function seed() {
 
     const projects = [
       { title: "Brand Portfolio", description: "A dynamic portfolio with animations, reusable components, and responsive UX.", tech: "Next.js · TypeScript · Tailwind · Framer Motion", url: "https://example.com", featured: true },
-      { title: "E-commerce UI", description: "A modern product showcase built with server-rendered React and clean design.", tech: "React · Next.js · Tailwind · PostgreSQL", url: "https://example.com", featured: false },
+      { title: "E-commerce UI", description: "A modern product showcase built with server-rendered React and clean design.", tech: "React · Next.js · Tailwind · SQLite", url: "https://example.com", featured: false },
     ];
 
     const posts = [
-      { title: "Building a portfolio with Next.js and PostgreSQL", slug: "nextjs-postgres", excerpt: "Learn how to connect a modern React frontend to an Express + PostgreSQL backend.", content: "Long form content.", published_at: new Date(), featured: true },
+      { title: "Building a portfolio with Next.js and SQLite", slug: "nextjs-sqlite", excerpt: "Learn how to connect a modern React frontend to an Express + SQLite backend.", content: "Long form content.", published_at: new Date(), featured: true },
       { title: "Designing interactive interfaces with Framer Motion", slug: "framer-motion", excerpt: "Add motion and attention to your site using Framer Motion.", content: "Long form content.", published_at: new Date(), featured: false },
     ];
 

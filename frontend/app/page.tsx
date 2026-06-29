@@ -27,7 +27,7 @@ const sampleProjects = [
         id: 2,
         title: "E-commerce UI",
         description: "A modern product showcase pages built with server-rendered React and clean design.",
-        tech: "React · Next.js · Tailwind · FastAPI · PostgreSQL",
+        tech: "React · Next.js · Tailwind · SQLite",
         url: "https://example.com",
         featured: false,
     },
@@ -36,8 +36,8 @@ const sampleProjects = [
 const sampleBlogPosts = [
     {
         id: 1,
-        title: "Building a portfolio with Next.js and PostgreSQL",
-        excerpt: "Learn how to connect a modern React frontend to a FastAPI + PostgreSQL backend with a polished UI.",
+        title: "Building a portfolio with Next.js and SQLite",
+        excerpt: "Learn how to connect a modern React frontend to an Express + SQLite backend with a polished UI.",
         published_at: "2026-06-01T00:00:00.000Z",
         featured: true,
     },
@@ -120,7 +120,7 @@ export default async function Home() {
                         <p className="text-sm uppercase tracking-[0.3em] text-slate-400">About</p>
                         <h2 className="mt-4 text-3xl font-semibold text-white">A polished, data-driven portfolio.</h2>
                         <p className="mt-6 text-base leading-7 text-slate-300">
-                            I specialize in fast, accessible UI and clean developer experience. This site pairs a Next.js frontend with an Express backend so your content can be managed through a REST API.
+                            I specialize in fast, accessible UI and clean developer experience. This site pairs a Next.js frontend with an Express backend and local SQLite storage so your content can be managed through a REST API.
                         </p>
                         <div className="mt-8 grid gap-4 sm:grid-cols-2">
                             <div className="rounded-3xl bg-slate-900/80 p-6 transition-transform duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:border hover:border-brand-500 hover:bg-slate-900/90">
@@ -129,7 +129,7 @@ export default async function Home() {
                             </div>
                             <div className="rounded-3xl bg-slate-900/80 p-6 transition-transform duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:border hover:border-brand-500 hover:bg-slate-900/90">
                                 <p className="text-sm uppercase tracking-[0.3em] text-slate-400">Backend</p>
-                                <p className="mt-3 text-sm text-slate-200">FastAPI · PostgreSQL · REST API</p>
+                                <p className="mt-3 text-sm text-slate-200">Express · SQLite · REST API</p>
                             </div>
                         </div>
                     </div>
@@ -161,7 +161,7 @@ export default async function Home() {
                         <h2 className="mt-2 text-3xl font-semibold text-white">Selected work</h2>
                     </div>
                     <p className="max-w-xl text-sm text-slate-400">
-                        The project list is stored in PostgreSQL and served through a clean FastAPI REST API.
+                        The project list is stored in SQLite and served through a clean Express REST API.
                     </p>
                 </div>
 
@@ -191,7 +191,7 @@ export default async function Home() {
                         <h2 className="mt-2 text-3xl font-semibold text-white">Latest insights</h2>
                     </div>
                     <p className="max-w-xl text-sm text-slate-400">
-                        Blog posts can be managed in PostgreSQL and served through the FastAPI API.
+                        Blog posts can be managed in SQLite and served through the Express API.
                     </p>
                 </div>
 
@@ -208,7 +208,7 @@ export default async function Home() {
                         <p className="text-sm uppercase tracking-[0.3em] text-slate-400">Contact</p>
                         <h2 className="mt-4 text-3xl font-semibold text-white">Let€™s build something together.</h2>
                         <p className="mt-6 max-w-xl text-base leading-7 text-slate-300">
-                            Send a message and it will be stored in PostgreSQL and accessible through the FastAPI backend API.
+                            Send a message and it will be stored in SQLite and accessible through the Express backend API.
                         </p>
                     </div>
                     <ContactForm />

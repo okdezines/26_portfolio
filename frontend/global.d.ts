@@ -3,7 +3,8 @@ declare module "react" {
   export type ReactElement = any;
   export type FormEvent<T = any> = any;
   export type ChangeEvent<T = any> = any;
-  export function useState<S>(initialState: S | (() => S)): [S, (newState: S) => void];
+  export type SetStateAction<S> = S | ((prevState: S) => S);
+  export function useState<S>(initialState: S | (() => S)): [S, (newState: SetStateAction<S>) => void];
   export function useEffect(effect: () => void, deps?: any[]): void;
   export function useMemo<T>(factory: () => T, deps?: any[]): T;
   export function createElement(type: any, props?: any, ...children: any[]): ReactElement;
@@ -17,7 +18,8 @@ declare module "react-dom" {
 
 declare module "framer-motion" {
   const motion: any;
-  export { motion };
+  const AnimatePresence: any;
+  export { motion, AnimatePresence };
 }
 
 declare module "next" {

@@ -14,10 +14,10 @@ export default function HeroBanner() {
                 Portfolio
             </p>
             <h1 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
-                I build expressive web experiences with React, Next.js, and PostgreSQL.
+                I build expressive web experiences with React, Next.js, and SQLite.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">
-                A modern portfolio with API-driven projects, blog content, testimonials, and a contact workflow powered by FastAPI and PostgreSQL.
+                A modern portfolio with API-driven projects, blog content, testimonials, and a contact workflow powered by Express and SQLite.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
                 <a

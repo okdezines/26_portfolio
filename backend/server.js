@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send({ message: "Portfolio backend running with PostgreSQL" });
+  res.send({ message: "Portfolio backend running with SQLite" });
 });
 
 app.use("/api/projects", projectsRouter);
@@ -32,7 +32,7 @@ async function start() {
   try {
     await sequelize.authenticate();
     await sequelize.sync();
-    console.log("Connected to PostgreSQL");
+    console.log("Connected to the database");
     app.listen(port, () => {
       console.log(`Server is running on port ${port}`);
     });

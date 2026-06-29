@@ -25,12 +25,14 @@ const initialState: FormState = {
 export default function ContactForm() {
     const [formData, setFormData] = useState<FormState>(initialState);
     const [status, setStatus] = useState<string | null>(null);
+    const [statusType, setStatusType] = useState<"success" | "error" | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     async function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
         setIsSubmitting(true);
         setStatus(null);
+        setStatusType(null);
 
         try {
             const response = await fetch(`${backendUrl}/api/contact-messages/`, {
@@ -39,14 +41,20 @@ export default function ContactForm() {
                 body: JSON.stringify(formData),
             });
 
+            const result = await response.json();
+
             if (!response.ok) {
-                throw new Error("Failed to send message");
+                throw new Error(result.error || "Failed to send message");
             }
 
-            setStatus("Message sent! I will get back to you soon.");
+            setStatus(result.message || "Message sent! I will get back to you soon.");
+            setStatusType("success");
             setFormData(initialState);
         } catch (error) {
-            setStatus("Could not send the message. Please try again later.");
+            setStatus(
+                error instanceof Error ? error.message : "Could not send the message. Please try again later."
+            );
+            setStatusType("error");
         } finally {
             setIsSubmitting(false);
         }
@@ -97,7 +105,18 @@ export default function ContactForm() {
                 {isSubmitting ? "Sending..." : "Send message"}
             </button>
 
-            {status ? <p className="text-sm text-slate-300">{status}</p> : null}
+            {status ? (
+                <p
+                    className={`text-sm ${statusType === "success"
+                        ? "text-emerald-400"
+                        : statusType === "error"
+                            ? "text-rose-400"
+                            : "text-slate-300"
+                        }`}
+                >
+                    {status}
+                </p>
+            ) : null}
         </form>
     );
 }
